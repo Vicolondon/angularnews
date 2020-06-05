@@ -1,0 +1,23 @@
+<ul>
+    <li>
+        <a [routerLink]="'/'">Home</a>
+    </li>
+    <li>
+        <a [routerLink]="'/me'">Me</a>
+    </li>
+    <li *ngIf="!userData">
+        <a [routerLink]="'/login'">Login</a>
+    </li>
+    <li>
+        <a [routerLink]="'/articles'">Articles</a>
+    </li>
+    <li *ngIf="userData">
+        <a [routerLink]="'/favorites'">Favorites</a>
+    </li>
+    <li *ngIf="userData">
+        <a [routerLink]="'/sources'">Sources</a>
+    </li>
+    <li *ngIf="userData">
+        <a href="#" (click)="logout()">Logout</a>
+    </li>
+</ul>

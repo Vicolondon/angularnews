@@ -1,0 +1,16 @@
+<ul>
+    <li>
+        <app-search
+        (formSubmit)="getArticles($event)"></app-search>
+    </li>
+    <li class="article" *ngFor="let item of allArticles">
+        <h1 class="article-title">{{ item['title'] }}</h1>
+        <div class="article-img-text">
+            <img  class="float-left" src="{{ item['urlToImage'] }}" alt="{{ item['title'] }}">
+            <p class="text-lead">{{ item['description'] }}</p>
+        </div>
+        <span class="article-meta">Written by {{ item['author'] }}</span>
+        <br>
+        <span>{{ item['publishedAt'] }}</span>
+    </li>
+</ul>

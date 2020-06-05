@@ -1,0 +1,18 @@
+<ul>
+        <li>
+            <h2>All sources</h2>
+        </li>
+        <li class="sources" *ngFor="let item of allSourcesName">
+            <span class="article-title">{{ item['name'] }}</span>
+            <span class="article-title">{{ item['description'] }}</span>
+            <span class="article-title">{{ item['url'] }}</span>
+            <span class="article-title">{{ item['category'] }}</span>
+            <span class="article-title">{{ item['language'] }}</span>
+            <span class="article-title">{{ item['country'] }}</span>
+            <div class="bookmark"
+            *ngIf="userData"
+            (click)="addFavorites(item['id'], item['name'], item['description'],item['url'], item['category'], item['language'], item['country'])">
+                <span>Add to favorites</span>
+            </div>
+        </li>
+    </ul>

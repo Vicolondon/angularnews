@@ -1,0 +1,20 @@
+<ul>
+    <li>
+        <h2>All favorites</h2>
+    </li>
+    <li class="sources" *ngFor="let item of allFavorites">
+        <a [routerLink]="'/articles'"
+        (click)="goArticles(item['0'])">
+            <span class="article-title">{{ item['1'] }}</span>
+            <span class="article-title">{{ item['2'] }}</span>
+            <span class="article-title">{{ item['3'] }}</span>
+            <span class="article-title">{{ item['4'] }}</span>
+            <span class="article-title">{{ item['5'] }}</span>
+            <span class="article-title">{{ item['6'] }}</span>
+        </a>
+        <div class="bookmark"
+        *ngIf="userData"
+        (click)="removeFavorites(item['0'])">
+    <span>Remove from favorites</span></div>
+    </li>
+</ul>

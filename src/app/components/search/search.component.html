@@ -1,0 +1,27 @@
+<form
+    [formGroup]="formSearch" 
+    (submit)="formSubmit.emit(formSearch.value)"
+    class="form-group"
+>
+    <label for="source">Source:</label>
+    <select
+    class="select-source"
+    formControlName="source"
+    type="text" name="source" required minlength="1"
+    placeholder="Select source ...">
+        <option *ngFor="let item of allSourcesName"
+        [value]="item.id">
+            {{ item.name }}
+        </option>
+    </select>
+    <input  
+        formControlName="keywords"
+        type="text" name="keywords"
+        placeholder="Any keywords"
+        value=""
+    >
+
+    <button
+        type="submit"
+    >OK</button>
+</form>
